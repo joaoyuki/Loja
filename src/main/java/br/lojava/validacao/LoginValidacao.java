@@ -20,10 +20,6 @@ public class LoginValidacao implements Validator{
 			throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro de validação", " Nome precisa ser preenchido"));
 		}
 		
-		if (arg2.equals("Joao")){
-			throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro de validação", arg2 + " Não é um e-mail válido;"));
-		}
-		
 	}
 
 }
