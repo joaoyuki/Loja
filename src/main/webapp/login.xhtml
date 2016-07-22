@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template.xhtml">
+
+	<ui:define name="titulo">Login</ui:define>
+
+	<ui:define name="corpo">
+		<h:form id="formLogin">
+
+			<p:growl  id="growl" widgetVar="growl" showDetail="true" sticky="true" autoUpdate="true" />
+
+			<p:panel id="panelLogin" header="Login de usuário">
+				<p:panelGrid columns="2">
+
+					<p:outputLabel for="nome" value="Usuário" />
+					<p:inputText id="nome" value="#{usuarioBean.usuario.nome}">
+						<f:validator validatorId="login.UsuarioValidator"></f:validator>
+					</p:inputText>
+					<p:message for="nome" display="tooltip" />
+					 <h:message for="nome" style="color:red" />
+
+					<p:outputLabel value="Senha" />
+					<p:password value="#{usuarioBean.usuario.senha}" />
+
+
+
+				</p:panelGrid>
+
+
+				<p:commandButton value="Login" action="#{usuarioBean.login}"  />
+			</p:panel>
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>
