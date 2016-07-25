@@ -1,0 +1,31 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template.xhtml">
+
+	<ui:define name="titulo">Cadastro de usuário</ui:define>
+
+	<ui:define name="corpo">
+		<h:form id="formCadastro">
+
+			<p:growl  id="growl" widgetVar="growl" showDetail="true" sticky="true" autoUpdate="true" />
+
+			<p:panel id="panelCadastro" header="Cadastro de usuário">
+				<p:panelGrid columns="2">
+
+					<p:outputLabel value="Nome do usuário" ></p:outputLabel>
+					<p:inputText value="#{cadastroUsuarioBean.usuario.nome}" />
+					
+					<p:outputLabel value="Senha do usuário" ></p:outputLabel>
+					<p:password value="#{cadastroUsuarioBean.usuario.senha}" />
+
+				</p:panelGrid>
+
+				<p:commandButton value="Cadastrar"  />
+			</p:panel>
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>
